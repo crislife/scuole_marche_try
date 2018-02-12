@@ -22,7 +22,7 @@ $tipologie=array("CENTRO%20TERRITORIALE%20PERMANENTE",
                  "SCUOLA%20SECONDARIA%20DI%20II%20GRADO");
 
 # Use the PHP Simple HTML DOM Parser to extract <td> tags
- $main_url="http://cercalatuascuola.istruzione.it/cercalatuascuola/ricerca/risultati?codiceRegione=MA_MARCHE&codiceProvincia=&codiceOrdine=&radioBiennioTriennio=Biennio&denominazione=&codMecc=&tipoRicerca=AVANZATA&gidf=1";   
+ $main_url="http://cercalatuascuola.istruzione.it/cercalatuascuola/";   
     $rows = (scraperwiki::getData("scuole_marche",-1,0));
     $count = count($rows);
     $last_row = $rows[$count-1];
