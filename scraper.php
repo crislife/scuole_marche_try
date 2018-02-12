@@ -22,7 +22,7 @@ $tipologie=array("CENTRO%20TERRITORIALE%20PERMANENTE",
                  "SCUOLA%20SECONDARIA%20DI%20II%20GRADO");
 
 # Use the PHP Simple HTML DOM Parser to extract <td> tags
- $main_url="http://www.trampi.istruzione.it/ricScu/cerca.do?";   
+ $main_url="http://cercalatuascuola.istruzione.it/cercalatuascuola/ricerca/risultati?codiceRegione=MA_MARCHE&codiceProvincia=&codiceOrdine=&radioBiennioTriennio=Biennio&denominazione=&codMecc=&tipoRicerca=AVANZATA&gidf=1";   
     $rows = (scraperwiki::getData("scuole_marche",-1,0));
     $count = count($rows);
     $last_row = $rows[$count-1];
@@ -65,7 +65,7 @@ function create_dataset2($html){
                
             # Mi salvo il codiceMPI 
             $codMPI=trim($array_result[1]);
-            $url_MPI="http://www.trampi.istruzione.it/ricScu/dettaglio.do?cod=".$codMPI;
+            $url_MPI="http://cercalatuascuola.istruzione.it/cercalatuascuola/ricerca/risultati?codiceRegione=MA_MARCHE&codiceProvincia=&codiceOrdine=&radioBiennioTriennio=Biennio&denominazione=&codMecc=&tipoRicerca=AVANZATA&gidf=1".$codMPI;
             #print $url_MPI."\n";
             $html = scraperwiki::scrape($url_MPI);
             $dom_mpi = new simple_html_dom();
